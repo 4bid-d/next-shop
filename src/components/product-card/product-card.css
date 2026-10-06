@@ -1,0 +1,108 @@
+.product-card{
+    /* background-color: #B0BBEF; */
+    /* background-color: #8391E6; */
+    /* background-color: #3E39C6; */
+    /* background-color: #24207D; */
+    /* min-width: 200px;
+    min-height: 300px; */
+    border-radius: 10px;
+    background-color: #E9EF47;
+    /* box-shadow: #0C0A3A; */
+    /* box-shadow: 7px 5.7px 0px  2px #0c0a3a;   */
+    color: black;
+    
+}
+
+.product-card:hover{
+    box-shadow: 2px 2px 5px  1px #0c0a3a;  
+    min-width: 210px;
+    min-height: 310px;
+}
+.product-image-div{
+   
+    border-radius: 10px 10px 10px 10px;
+    /* border-radius: 10px ; */
+    /* background-color: #24207D; */
+    min-width:250px;
+    min-height:250px ;
+    /* border-bottom: solid 2px black; */
+    padding-bottom:10px ;
+}
+
+.product-image{
+    width:220px;
+    height:250px ;
+    object-fit: fill;
+}
+
+.card-content{
+        
+    padding: 10px;
+    color: #E9EF47;
+     /* background-color: #B0BBEF;  */
+    /* background-color: #8391E6; */
+    background-color: #24207D;
+    background-color: #24207D;
+    
+    /* background-color: #5E68DD; */
+    /* background-color: #5E68DD; */
+    border-radius:  0px 0px 10px 10px;
+
+    /* background-color: #3E39C6; */
+}
+
+.card-title{
+    width: 200px;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis ;
+}
+
+.product-price{
+    font-size: larger;
+    /* background-color: #; */
+    font-weight: bolder;
+}
+
+.view-details-btn{
+    background-color: #E9EF47;
+    color: #24207D;
+    height: max-content;
+    width: 100%;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bolder;
+    padding-block: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.view-details-btn {
+  position: relative;
+  overflow: hidden;
+  /* padding: 12px 24px; */
+  border: 2px solid #E9EF47;
+  /* background: #E9EF47; */
+  cursor: pointer;
+  z-index: 0;
+  transition: color 0.2s ease-in-out;
+}
+
+.view-details-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #24207D;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.view-details-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.view-details-btn:hover {
+  color: #E9EF47;
+}
