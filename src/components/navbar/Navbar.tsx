@@ -1,11 +1,13 @@
 "use client"
-import React, { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import "./navbar.css"
 import Link from 'next/link'
+import { useCart } from '../../context/cartContext'
 
 function Navbar() {
   const LinkHolder = useRef<HTMLDivElement>(null)
-
+  const {cart} = useCart()
+  
   function toggleActive(e:React.MouseEvent<HTMLElement>){
 
     if(LinkHolder.current == null) return 
@@ -30,11 +32,10 @@ function Navbar() {
           <div className='title-letter'>t</div>
         </Link>
         <div className='link-holder' ref={LinkHolder}>
-          {/* <Link className='nav-link active' href={"/"} onClick={toggleActive}>Home</Link> */}
           <Link className='nav-link' href={"/products"} onClick={toggleActive}>Products</Link>
           <Link className='nav-link' href={"/about-us"} onClick={toggleActive} >About Us</Link>
           <Link className='nav-link' href={"/contact-us"} onClick={toggleActive}>Contact Us</Link>
-          <Link className='nav-link' href={"/cart"} onClick={toggleActive}>Cart</Link>
+          <Link className='nav-link' href={"/cart"} onClick={toggleActive}>Cart ({cart.length})</Link>
         </div>
     </div>
   )

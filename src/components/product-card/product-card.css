@@ -5,16 +5,19 @@
     /* background-color: #24207D; */
     /* min-width: 200px;
     min-height: 300px; */
+    background-color:#5E68DD ;
+    color: white;
     border-radius: 10px;
-    background-color: #E9EF47;
+    background-color: white;
     /* box-shadow: #0C0A3A; */
     /* box-shadow: 7px 5.7px 0px  2px #0c0a3a;   */
     color: black;
+    border: 1px black solid;
     
 }
 
 .product-card:hover{
-    box-shadow: 2px 2px 5px  1px #0c0a3a;  
+    /* box-shadow: 2px 2px 5px  1px #0c0a3a;   */
     min-width: 210px;
     min-height: 310px;
 }
@@ -43,6 +46,8 @@
     /* background-color: #8391E6; */
     background-color: #24207D;
     background-color: #24207D;
+     background-color:#5E68DD ;
+    color: white;
     
     /* background-color: #5E68DD; */
     /* background-color: #5E68DD; */
@@ -65,8 +70,8 @@
 }
 
 .view-details-btn{
-    background-color: #E9EF47;
-    color: #24207D;
+    background-color: white;
+    color: #5E68DD;
     height: max-content;
     width: 100%;
     border-radius: 10px;
@@ -81,7 +86,7 @@
   position: relative;
   overflow: hidden;
   /* padding: 12px 24px; */
-  border: 2px solid #E9EF47;
+  border: 2px solid white;
   /* background: #E9EF47; */
   cursor: pointer;
   z-index: 0;
@@ -92,7 +97,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: #24207D;
+  background: #5E68DD;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease-in-out;
@@ -104,5 +109,57 @@
 }
 
 .view-details-btn:hover {
-  color: #E9EF47;
+  color: white;
 }
+.quantity-div{
+    display: flex;
+    gap: 2px;
+}
+.cart-buttons-div{
+    display: flex;
+    /* width: 100%;  */
+    gap: 2px;
+}
+.quantity-btn,.cart-btn,.quantity-display{
+    border-radius: 5px;
+    height: max-content;
+    width: max-content;
+    font-size: large;
+    font-weight: bolder;
+    padding-block: 10px;
+    cursor: pointer;
+    margin-top: 1rem;
+    background-color: white;
+}
+
+
+
+.decrement-cart-btn{
+  flex: 1;
+  color: red;
+  width: min-content;
+  width: min-content;
+}
+
+.increment-cart-btn{
+    flex: 1;
+    color: rgb(0, 198, 0);
+    width: min-content;
+}
+
+.remove-cart-btn{
+    flex: 1;
+    color: red;
+    padding-inline: 5px;
+    width: 100%;
+}
+
+.quantity-display{
+    /* width: max-content ;
+    height: max-content; */
+    background-color: white;
+    color: black; 
+    flex: 1;
+    text-align: center;
+}
+

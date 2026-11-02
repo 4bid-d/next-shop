@@ -11,7 +11,7 @@ async function Products() {
        {
 
           products.map((obj:IProduct)=>{
-            return (<ProductCard key={obj.id} product={obj} />)
+            return (<ProductCard fromCartPage={false} key={obj.id} product={obj} />)
           })
 
        }

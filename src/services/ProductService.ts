@@ -8,6 +8,17 @@ export interface IProduct {
   description: string;
   image: string[];
   thumbnail: string;
+  quantity : number;
+}
+export interface ICartProduct {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  image: string[];
+  quantity : number;
+  thumbnail: string;
 }
 
 export class ProductService extends ServiceBase{

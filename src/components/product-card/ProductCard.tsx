@@ -1,13 +1,24 @@
+"use client"
 import "./product-card.css"
-import { IProduct } from './../../services/ProductService';
+import { IProduct , ICartProduct } from './../../services/ProductService';
 import Link from "next/link";
+import { ICartContext, useCart } from "@/src/context/cartContext";
 
 interface IProductCardProps{
   product : IProduct 
+  fromCartPage : boolean
 }
 
 function ProductCard(props:IProductCardProps ) {
-  const productObj : IProduct = props.product
+  const productObj : IProduct | ICartProduct = props.product
+  const fromCartPage : boolean = props.fromCartPage
+  const { decrementQuantity , incrementQuantity ,popCart } : ICartContext = useCart()
+
+  const inc_cart = () => incrementQuantity(productObj.id)
+  const dec_cart = () => decrementQuantity(productObj.id)
+  const rem_cart= () => {
+    popCart(productObj.id)
+  }
   return (
     <div className="product-card">
         <div className="product-image-div">
@@ -18,11 +29,21 @@ function ProductCard(props:IProductCardProps ) {
                 {productObj.title}
             </div>
             <div className="product-price">
-              {`RS: ${  productObj.price}`}
+              {`RS: ${  productObj.price*80}`}
             </div>
-            <Link href={`/products/details/${productObj.id}`}>
+           { !fromCartPage && <Link href={`/products/details/${productObj.id}`}>
               <button className="view-details-btn" >View Details</button>
-            </Link>
+            </Link>}
+            {fromCartPage && 
+              <div className="cart-div">
+                <div className="quantity-div">
+                  <button className="decrement-cart-btn quantity-btn" onClick={dec_cart}>-</button>
+                  <div className="quantity-display">{productObj.quantity}</div>
+                  <button className="increment-cart-btn quantity-btn" onClick={inc_cart} >+</button>
+                </div>
+                <button className="remove-cart-btn cart-btn" onClick={rem_cart}>Remove From Cart</button>
+              </div>
+            }
         </div>
     </div>
   )
